@@ -1,70 +1,241 @@
-.App {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 2rem;
+/* --- GLOBAL STYLES --- */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #f9fafb;
+  color: #1f2937;
+}
+
+a {
+  color: #2563eb;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #1d4ed8;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  border-radius: 8px; /* Applied to all images, adjust if specific needs arise */
+}
+
+/* --- HEADER --- */
+.portfolio-header {
+  background: linear-gradient(to right, #2563eb, #1e3a8a);
+  color: white;
+  text-align: center;
+  padding: 3rem 1rem 2rem;
+}
+
+.portfolio-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.portfolio-header p {
+  font-size: 1.2rem;
+  margin: 0;
+  font-weight: 300;
+}
+
+/* --- NAVBAR --- */
+.navbar {
+  background-color: rgb(59, 59, 59); /* Dark background */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: flex-start; /* Aligns content to the left */
+  align-items: center;
+  max-width: 1920px; /* Use a max-width for very wide screens */
+  margin: 0 auto;
+}
+
+/* Group for the logo and LinkedIn icon on the left */
+.navbar-left-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* Space between logo text and the icon */
+}
+
+.nav-logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ffffff; /* White text for logo */
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.nav-logo:hover {
+  color: #9b0000; /* Hover color for logo */
+}
+
+/* Main navigation links group */
+.nav-links {
+  margin-left: auto; /* Pushes this div to the far right */
+  display: flex;
+  gap: 1.5rem; /* Space between individual nav links */
+}
+
+.nav-links a {
+  color: #ffffff; /* White text for nav links */
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: #9b0000; /* Hover color for nav links */
+}
+
+/* --- LINKEDIN ICON STYLING --- */
+
+  /* Styles for the <a> tag wrapping the icon (clickable area) */
+  .linkedin-icon-link {
+    display: flex; /* Helps align the image nicely */
+    align-items: center;
+    justify-content: center;
+    background: none; /* No background color */
+    border: none;    /* No border */
+    padding: 0;      /* No padding */
+    cursor: pointer; /* Indicates it's clickable */
   }
-  
-  header {
-    text-align: center;
-    margin-bottom: 2rem;
+
+  /* Styles for the <img> tag (the actual icon) */
+  .linkedin-icon {
+    width: 32px;   /* Set your desired size */
+    height: 32px;  /* Keep width and height same for square icons */
+    display: block; /* Removes extra space below inline elements */
+    transition: transform 0.2s ease; /* Optional: subtle hover effect */
   }
-  
-  .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-    gap: 1.5rem;
+
+  .linkedin-icon:hover {
+    transform: scale(1.1); /* Makes the icon slightly larger on hover */
+    /* You can add a filter here for a hover color change if your icon is monochrome, e.g.,
+      filter: brightness(0) saturate(100%) invert(20%) sepia(80%) saturate(2000%) hue-rotate(340deg);
+      (This example would turn a white icon to a red-ish color for example, matching your nav-link hover)
+      You might need to experiment with filter values based on your icon's base color. */
   }
-  
-  .project-card {
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+
+/* --- PROJECT GRID --- */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* --- PROJECT CARD --- */
+.project-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+}
+
+.project-card h3 {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.project-card p {
+  flex-grow: 1; /* Allows description to take up available space */
+  font-size: 0.95rem;
+}
+
+.project-link {
+  margin-top: 1rem;
+  font-weight: bold;
+  color: #2563eb;
+  align-self: flex-start; /* Aligns link to the left */
+}
+
+/* --- TAG STYLING --- */
+.tags {
+  margin-top: 0.5rem;
+}
+
+.tag {
+  display: inline-block;
+  background: #e0e7ff;
+  color: #3730a3;
+  padding: 0.25rem 0.5rem;
+  margin: 0.25rem 0.25rem 0 0;
+  border-radius: 999px;
+  font-size: 0.75rem;
+}
+
+/* --- PROJECT DETAIL PAGE --- */
+.project-detail {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 1rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+}
+
+.project-detail h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.project-detail p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* --- FOOTER --- */
+.app-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-top: 3rem; /* Add some space above the footer */
+  background-color: #f1f5f9; /* Light background */
+  color: #64748b; /* Grey text */
+  font-size: 0.85rem;
+}
+
+.app-footer p {
+  margin: 0.5rem 0;
+}
+
+.app-footer .attribution-text a {
+  color: #64748b; /* Keep attribution link subtle */
+  text-decoration: underline;
+}
+
+.app-footer .attribution-text a:hover {
+  color: #334155; /* Slightly darker on hover */
+}
+
+/* --- RESPONSIVE STYLES --- */
+@media (max-width: 600px) {
+  .portfolio-header h1 {
+    font-size: 2rem;
   }
-  
-  .project-image {
-    width: 100%;
-    border-radius: 7px;
-    margin-bottom: 1rem;
+  .portfolio-header p {
+    font-size: 1rem;
   }
-  
-  .tags {
-    margin: 0.5rem 0;
+  .navbar-container {
+    padding: 1rem; /* Adjust padding for smaller screens */
   }
-  .tag {
-    background: #e0e7ff;
-    color: #3730a3;
-    border-radius: 5px;
-    padding: 0.2rem 0.6rem;
-    margin-right: 0.3rem;
-    font-size: 0.85rem;
-  }
-  
-  .project-link {
-    margin-top: auto;
-    color: #2563eb;
-    text-decoration: underline;
-    font-weight: 600;
-  }
-  
-  .tags-filter {
-    margin-bottom: 1.2rem;
-  }
-  .tag-filter-btn {
-    margin: 0.2rem;
-    background: #f3f4f6;
-    border: none;
-    border-radius: 5px;
-    padding: 0.3rem 0.8rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background 0.2s;
-  }
-  .tag-filter-btn.selected {
-    background: #6366f1;
-    color: #fff;
-  }
+}

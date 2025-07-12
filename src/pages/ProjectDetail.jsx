@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { projects } from "../projects";
 
 export default function ProjectDetail() {
@@ -16,9 +16,13 @@ export default function ProjectDetail() {
       <img src={project.image} alt={project.name} />
       <p>{project.description}</p>
       <p><strong>Tags:</strong> {project.tags.join(", ")}</p>
-      <a href={project.link} target="_blank" rel="noopener noreferrer">
-        View on GitHub
-      </a>
+
+      <Link to="/projects">
+                <button style={{ marginBottom: "20px", padding: "10px 20px" }}>
+                Back to Projects  
+                </button>
+      </Link>
+
     </div>
   );
 }
