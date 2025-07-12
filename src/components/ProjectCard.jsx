@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function ProjectCard({ project }) {
   return (
@@ -11,9 +12,9 @@ export default function ProjectCard({ project }) {
           <span key={tag} className="tag">{tag}</span>
         ))}
       </div>
-      <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-link">
+      <Link to={`/projects/${project.id}`} className="project-link">
         View Project
-      </a>
+      </Link>
     </div>
   );
 }

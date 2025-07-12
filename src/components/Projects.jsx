@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { projects } from "../projects";
 import ProjectCard from "./ProjectCard";
 import TagsFilter from "./TagsFilter";
+import { Link } from "react-router-dom";
 
 // Utility: get unique tags from all projects
 const getUniqueTags = (projects) =>
@@ -33,8 +34,13 @@ export default function Projects() {
         {filteredProjects.map(project => (
           <ProjectCard key={project.name} project={project} />
         ))}
-        {filteredProjects.length === 0 && <p>No projects match the selected skills.</p>}
+        {filteredProjects.length === 0 && <p>No projects match the selected skills.</p>}  
       </div>
+        <Link to="/">
+          <button style={{ marginBottom: "20px", padding: "10px 20px" }}>
+            Back to Home
+         </button>
+        </Link>
     </section>
   );
 }

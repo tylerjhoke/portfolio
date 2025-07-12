@@ -1,23 +1,26 @@
 export const projects = [
     {
+      id: "website-portfolio",
       name: "Portfolio Website",
       description: "A personal website built with React to showcase my work.",
       image: "/assets/images/portfolio.png",
-      link: "https://github.com/yourusername/portfolio",
+      link: "",
       tags: ["React", "Web Development", "JavaScript"]
     },
     {
+      id: "01",
       name: "Data Analysis with Python",
       description: "Analyzed large datasets using pandas and matplotlib.",
       image: "/assets/images/data-analysis.png",
-      link: "https://github.com/yourusername/data-analysis",
+      link: "",
       tags: ["Python", "Data Science"]
     },
     {
-      name: "MATLAB Simulation",
-      description: "Simulated dynamic systems using MATLAB.",
+      id: "hydroponic-tower",
+      name: "Hydroponic Tower",
+      description: "Designed and built a hydroponic tower for urban gardening.",
       image: "/assets/images/matlab-sim.png",
-      link: "https://github.com/yourusername/matlab-simulation",
-      tags: ["MATLAB", "Simulation", "Engineering"]
+      link: "",
+      tags: ["Product Design", "3D Printing","SolidWorks"]
     }
   ];

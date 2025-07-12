@@ -1,17 +1,26 @@
+// App.jsx
 import React from "react";
+import Home from "./pages/Home";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Projects from "./components/Projects";
+import ProjectDetail from "./pages/ProjectDetail"; // You’ll create this
 import "./styles/App.css";
 
 function App() {
   return (
-    <div className="App">
-      <header>
-        <h1>Tyler Hoke Portfolio</h1>
-        <p>Welcome to my professional portfolio. Browse my projects by skill/tag!</p>
-      </header>
-      <Projects />
-      {/* Add About, Contact, Footer sections as you expand */}
-    </div>
+    <Router basename="/portfolio">
+      <div className="App">
+        <header>
+
+        </header>
+
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/projects/:projectId" element={<ProjectDetail />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
