@@ -1,0 +1,70 @@
+.App {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .project-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .project-image {
+    width: 100%;
+    border-radius: 7px;
+    margin-bottom: 1rem;
+  }
+  
+  .tags {
+    margin: 0.5rem 0;
+  }
+  .tag {
+    background: #e0e7ff;
+    color: #3730a3;
+    border-radius: 5px;
+    padding: 0.2rem 0.6rem;
+    margin-right: 0.3rem;
+    font-size: 0.85rem;
+  }
+  
+  .project-link {
+    margin-top: auto;
+    color: #2563eb;
+    text-decoration: underline;
+    font-weight: 600;
+  }
+  
+  .tags-filter {
+    margin-bottom: 1.2rem;
+  }
+  .tag-filter-btn {
+    margin: 0.2rem;
+    background: #f3f4f6;
+    border: none;
+    border-radius: 5px;
+    padding: 0.3rem 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .tag-filter-btn.selected {
+    background: #6366f1;
+    color: #fff;
+  }
