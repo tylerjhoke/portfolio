@@ -73,6 +73,7 @@ img {
   color: #ffffff; /* White text for logo */
   text-decoration: none;
   transition: color 0.2s ease;
+  padding-left: 0rem;
 }
 
 .nav-logo:hover {
@@ -106,7 +107,7 @@ img {
     justify-content: center;
     background: none; /* No background color */
     border: none;    /* No border */
-    padding: 0;      /* No padding */
+    padding-left: 1rem;      /* No padding */
     cursor: pointer; /* Indicates it's clickable */
   }
 

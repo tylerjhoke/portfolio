@@ -15,10 +15,10 @@ export default function Navbar() {
           
         >
         <img
-            src="public/assets/images/linkedin.svg" // This path is now confirmed correct!
+            src={`${process.env.PUBLIC_URL}/assets/images/linkedin.svg`}
             alt="LinkedIn Profile"
             className="linkedin-icon"
-            style={{ border: '1px solid white' }}
+            
         />
         
         </a>
