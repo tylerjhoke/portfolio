@@ -27,20 +27,44 @@ export default function Projects() {
   };
 
   return (
-    <section>
-      <h2>Projects</h2>
-      <TagsFilter allTags={allTags} selectedTags={selectedTags} onTagClick={handleTagClick} />
-      <div className="projects-grid">
-        {filteredProjects.map(project => (
-          <ProjectCard key={project.name} project={project} />
-        ))}
-        {filteredProjects.length === 0 && <p>No projects match the selected skills.</p>}  
+    <section className="animate-fade max-w-7xl mx-auto px-6 py-16 bg-gray-50 rounded-md">
+
+      <h2 className="text-3xl font-semibold text-gray-900 mb-8 border-b border-gray-300 pb-2">
+        Projects
+      </h2>
+      
+
+      {/* Tags Filter */}
+      <TagsFilter 
+        allTags={allTags} 
+        selectedTags={selectedTags} 
+        onTagClick={handleTagClick} 
+        className="mb-8"
+      />
+
+      {/* Projects Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {filteredProjects.length > 0 ? (
+          filteredProjects.map(project => (
+            <ProjectCard key={project.name} project={project} />
+          ))
+        ) : (
+          <p className="text-gray-600 col-span-full text-center">
+            No projects match the selected skills.
+          </p>
+        )}
       </div>
+
+      {/* Back Button */}
+      <div className="mt-12 text-center">
         <Link to="/">
-          <button style={{ marginBottom: "20px", padding: "10px 20px" }}>
-            Back to Home
-         </button>
+          <button
+            type="button"
+            className="px-6 py-2 border border-indigo-600 text-indigo-600 rounded-md hover:bg-indigo-600 hover:text-white transition">
+          Back to Home
+          </button>
         </Link>
+      </div>
     </section>
   );
 }

@@ -6,9 +6,7 @@ export default function Footer() {
       <p>&copy; {new Date().getFullYear()} Tyler Hoke. All rights reserved.</p>
       {/* LinkedIn Icon Attribution */}
       <p className="attribution-text">
-        <a href="https://www.flaticon.com/free-icons/linkedin" title="linkedin icons" target="_blank" rel="noopener noreferrer">
-          Linkedin icons created by riajulislam - Flaticon
-        </a>
+        <a href="https://www.flaticon.com/free-icons/linkedin" title="linkedin icons">Linkedin icons created by Freepik - Flaticon</a>
       </p>
     </footer>
   );
