@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { projects } from "../projects";
-import ProjectCard from "./ProjectCard";
-import TagsFilter from "./TagsFilter";
+import ProjectCard from "../components/ProjectCard";
+import TagsFilter from "../components/TagsFilter";
 import { Link } from "react-router-dom";
 
 // Utility: get unique tags from all projects
