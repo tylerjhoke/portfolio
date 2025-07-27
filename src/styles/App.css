@@ -211,28 +211,7 @@ img {
   margin-bottom: 1rem;
 }
 
-/* --- FOOTER --- */
-.app-footer {
-  text-align: center;
-  padding: 2rem 1rem;
-  margin-top: 3rem; /* Add some space above the footer */
-  background-color: #f1f5f9; /* Light background */
-  color: #64748b; /* Grey text */
-  font-size: 0.85rem;
-}
 
-.app-footer p {
-  margin: 0.5rem 0;
-}
-
-.app-footer .attribution-text a {
-  color: #64748b; /* Keep attribution link subtle */
-  text-decoration: underline;
-}
-
-.app-footer .attribution-text a:hover {
-  color: #334155; /* Slightly darker on hover */
-}
 
 /* --- RESPONSIVE STYLES --- */
 @media (max-width: 600px) {

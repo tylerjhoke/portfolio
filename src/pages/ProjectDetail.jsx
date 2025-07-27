@@ -23,13 +23,9 @@ export default function ProjectDetail() {
     <div className="max-w-4xl mx-auto px-4 py-20 bg-white rounded-lg shadow-md">
       <h1 className="text-3xl font-bold text-gray-900 mb-6">{project.name}</h1>
 
-      <img
-        src={project.image}
-        alt={project.name}
-        className="w-full rounded-md shadow-sm mb-6"
-      />
+      
 
-      <p className="text-lg text-gray-700 mb-4">{project.description}</p>
+      <p className="text-lg text-gray-700 mb-4">{project.body}</p>
 
       <p className="text-sm text-gray-600 mb-6">
         <strong>Tags:</strong>{" "}
@@ -48,6 +44,12 @@ export default function ProjectDetail() {
           Back to Projects
         </button>
       </Link>
+
+      <img
+        src={project.image}
+        alt={project.name}
+        className="w-full rounded-md shadow-sm mb-6"
+      />
     </div>
   );
 }

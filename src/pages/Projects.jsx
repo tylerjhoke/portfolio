@@ -8,9 +8,25 @@ import { Link } from "react-router-dom";
 const getUniqueTags = (projects) =>
   [...new Set(projects.flatMap(project => project.tags))];
 
+// Define the categories for the skills
+const mechanicalSkills = [
+  "SolidWorks",
+  "3D Printing",
+  "FEA",
+  "MATLAB",
+  "Product Design",
+  "Mechanical Analysis",
+  "Simulation",
+
+];
+
 export default function Projects() {
   const [selectedTags, setSelectedTags] = useState([]);
   const allTags = getUniqueTags(projects);
+
+  // Split tags into categories
+  const mechanicalTags = allTags.filter(tag => mechanicalSkills.includes(tag)).sort();
+  const interdisciplinaryTags = allTags.filter(tag => !mechanicalSkills.includes(tag)).sort();
 
   // Filter projects based on selected tags
   const filteredProjects = selectedTags.length === 0
@@ -28,15 +44,23 @@ export default function Projects() {
 
   return (
     <section className="animate-fade max-w-7xl mx-auto px-6 py-16 bg-gray-50 rounded-md">
-
       <h2 className="text-3xl font-semibold text-gray-900 mb-8 border-b border-gray-300 pb-2">
         Projects
       </h2>
       
-
-      {/* Tags Filter */}
+      {/* Tags Filter for Mechanical Skills */}
+      <h3 className="text-xl font-semibold text-gray-800 mb-4">Mechanical Skills</h3>
       <TagsFilter 
-        allTags={allTags} 
+        allTags={mechanicalTags} 
+        selectedTags={selectedTags} 
+        onTagClick={handleTagClick} 
+        className="mb-8"
+      />
+      
+      {/* Tags Filter for Interdisciplinary Skills */}
+      <h3 className="text-xl font-semibold text-gray-800 mb-4">Interdisciplinary Skills</h3>
+      <TagsFilter 
+        allTags={interdisciplinaryTags} 
         selectedTags={selectedTags} 
         onTagClick={handleTagClick} 
         className="mb-8"

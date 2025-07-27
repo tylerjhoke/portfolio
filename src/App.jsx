@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Projects from "./pages/Projects";
 import ProjectDetail from "./pages/ProjectDetail"; 
+import Work from "./pages/Work";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer"; 
 import "./styles/App.css";
@@ -21,6 +22,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/projects/:projectId" element={<ProjectDetail />} />
+          <Route path="/work_experience" element={<Work />} />
         </Routes>
       </div>
       <Footer />

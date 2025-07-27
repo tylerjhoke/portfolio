@@ -50,7 +50,7 @@ export default function Home() {
   return (
     <div className="animate-fade">
       {/* Banner Section - Main Portfolio Welcome */}
-      <div className="min-h-[40vh] flex flex-col justify-center items-center text-white text-center px-5 bg-gradient-to-r from-[#0f2027] via-[#203a43] to-[#2c5364]">
+      <div className="min-h-[40vh] flex flex-col justify-center items-center text-white text-center px-5 bg-gradient-to-r from-zinc-600 to-zinc-900">
         <h1 className="text-4xl sm:text-5xl font-bold mb-5">Welcome to My Portfolio</h1>
         <p className="text-xl sm:text-2xl mb-0">4/4 B.E. AND M.E. in Mechanical Engineering</p>
         <p className="text-xl sm:text-1xl mb-10">Aerospace/Product Design Focus</p>
@@ -69,7 +69,7 @@ export default function Home() {
       {/* About Me Section - Portrait and Text Side-by-Side */}
       <div
         ref={aboutRef}
-        className={`flex flex-wrap justify-center items-center gap-10 max-w-6xl mx-auto px-5 py-16 transition-all duration-1000 ${aboutVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
+        className={`flex flex-wrap bg-stone-500justify-center items-center gap-10 max-w-6xl mx-auto px-5 py-16 transition-all duration-1000 ${aboutVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
       >
         {/* Left Image: Your Portrait */}
         <img
@@ -101,7 +101,7 @@ export default function Home() {
           style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/assets/images/aboutme/marchmadnessvb.jpg)` }}
         >
           {/* Overlay for readability and color scheme */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0f2027] via-[#203a43] to-[#2c5364] opacity-80"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-zinc-600 to-zinc-900 opacity-80"></div>
           <h2 className="relative z-10 -mt-20 text-3xl sm:text-4xl font-semibold text-white text-center ">
             Volleyball Highlights
           </h2>
