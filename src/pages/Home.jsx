@@ -84,11 +84,13 @@ export default function Home() {
           <p className="text-lg leading-relaxed mb-4">
             Hi! I’m Tyler Hoke, a passionate mechanical engineer and software enthusiast.
             I thrive on building things that solve real-world problems and I'm continuously learning new technologies.
+            I also thrive in fast-paced, high-pressure environments where quick thinking and adaptability are key.
             This portfolio is where I showcase projects that demonstrate my skills and creativity.
           </p>
           <p className="text-lg leading-relaxed">
             Outside of my technical pursuits, I'm an avid athlete, particularly passionate about volleyball.
             I believe the discipline and teamwork learned in sports greatly complement my engineering approach.
+            I also enjoy cooking in my free time—it's a creative outlet that helps me reset and stay focused.
           </p>
         </div>
       </div>
