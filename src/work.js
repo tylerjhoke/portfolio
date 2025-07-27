@@ -2,7 +2,7 @@
 export const workExperiences = [
   {
     id: 'raytheon',
-    company: 'Raytheon Technologies',
+    company: 'Raytheon',
     title: 'Mechanical Engineering Intern',
     duration: 'Summer \'25',
     location: 'Tewksbury, MA',

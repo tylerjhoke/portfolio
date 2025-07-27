@@ -111,11 +111,11 @@ export default function Home() {
         {/* This image is now separate from the banner, so it can be clicked for the video */}
         <div className="w-full max-w-6xl mx-auto px-5 mb-10">
             <a
-                href="https://www.youtube.com/embed/VIDEO_ID8" // <== OPTIONAL: Direct YouTube link for SEO/fallback
+                href="https://youtu.be/rHX1UpAAU34?feature=shared&t=1891" // <== OPTIONAL: Direct YouTube link for SEO/fallback
                 onClick={(e) => {
                     e.preventDefault(); // Prevent direct navigation
                     // IMPORTANT: Replace with your actual YouTube video embed URL
-                    openVideoModal('https://www.youtube.com/embed/VIDEO_ID9');
+                    openVideoModal('https://www.youtube.com/embed/rHX1UpAAU34?si=flqXze0ZItCeFJrL');
                 }}
                 className="cursor-pointer block relative"
             >
