@@ -71,6 +71,7 @@ export default function Navbar() {
 
           <Link to="/" className="text-4xl text-white hover:text-red-600 transition" onClick={closeMenu}>Home</Link>
           <Link to="/projects" className="text-4xl text-white hover:text-red-400 transition" onClick={closeMenu}>Projects</Link>
+          <Link to="/work_experience" className="text-4xl text-white hover:text-red-400 transition" onClick={closeMenu}>Past Work</Link>
           {/* Add more mobile navigation links here as needed */}
         </div>
       )}
