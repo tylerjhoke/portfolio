@@ -115,7 +115,7 @@ export default function Home() {
                 onClick={(e) => {
                     e.preventDefault(); // Prevent direct navigation
                     // IMPORTANT: Replace with your actual YouTube video embed URL
-                    openVideoModal('https://www.youtube.com/embed/rHX1UpAAU34?si=flqXze0ZItCeFJrL');
+                    openVideoModal('https://www.youtube.com/embed/rHX1UpAAU34?si=flqXze0ZItCeFJrL&amp;start=1891');
                 }}
                 className="cursor-pointer block relative"
             >
