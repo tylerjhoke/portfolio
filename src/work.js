@@ -7,11 +7,11 @@ export const workExperiences = [
     duration: 'Summer \'25',
     location: 'Tewksbury, MA',
     responsibilities: [
-      '??',
-      '??',
-      '??',
-      '??',
-      '??'
+      'Operated and post-processed FDM and PolyJet 3D prints for functional prototypes and engineering models in the rapid prototyping and additive manufacturing laboratory',
+      'Performed dimensional analysis of cast parts using FARO Arm and HandySCAN 3D; assessed tolerance discrepancies ',
+      'Modeled RF cables in Creo within complex assemblies, verifying bend radii to ensure compliance with specifications',
+      'Designed and implemented an efficient tool storage system to improve laboratory workflow and organization',
+      'Contributed to thermal analysis peer reviews by evaluating simulation results and providing feedback on model assumptions and boundary conditions'
     ]
   },
   {

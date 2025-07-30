@@ -17,6 +17,7 @@ const mechanicalSkills = [
   "Product Design",
   "Mechanical Analysis",
   "Simulation",
+  "Fluid/Thermal Analysis",
 
 ];
 

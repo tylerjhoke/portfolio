@@ -23,8 +23,6 @@ export default function ProjectDetail() {
     <div className="max-w-4xl mx-auto px-4 py-20 bg-white rounded-lg shadow-md">
       <h1 className="text-3xl font-bold text-gray-900 mb-6">{project.name}</h1>
 
-      
-
       <p className="text-lg text-gray-700 mb-4">{project.body}</p>
 
       <p className="text-sm text-gray-600 mb-6">
@@ -45,11 +43,40 @@ export default function ProjectDetail() {
         </button>
       </Link>
 
-      <img
-        src={project.image}
-        alt={project.name}
-        className="w-full rounded-md shadow-sm mb-6"
-      />
+      {project.image && (
+        <img
+          src={project.image}
+          alt={project.name}
+          className="w-full rounded-md shadow-sm mb-6"
+        />
+      )}
+      {project.image1 && (
+        <img
+          src={project.image1}
+          alt={project.name}
+          className="w-full rounded-md shadow-sm mb-6"
+        />
+      )}
+      {project.image2 && (
+        <img
+          src={project.image2}
+          alt={project.name}
+          className="w-full rounded-md shadow-sm mb-6"
+        />
+      )}
+
+      {project.pdf && (
+        <div className="mt-8">
+          <h3 className="text-xl font-semibold mb-4 text-gray-800">Full Report (PDF)</h3>
+          <div className="w-full h-[80vh] rounded-xl shadow-lg overflow-hidden border border-gray-300">
+            <iframe
+              src={project.pdf}
+              title="report"
+              className="w-full h-full"
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 }
