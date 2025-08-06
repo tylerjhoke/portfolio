@@ -1,23 +1,28 @@
 // App.jsx
-import React from "react";
+import React, { useEffect } from "react";
 import Home from "./pages/Home";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import Projects from "./pages/Projects";
 import ProjectDetail from "./pages/ProjectDetail"; 
 import Work from "./pages/Work";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer"; 
+import GoogleAnalytics from "./components/GoogleAnalytics";
+import { pageview } from "./utils/gtag";
 import "./styles/App.css";
 
-function App() {
+function AppRoutes() {
+  const location = useLocation();
+
+  useEffect(() => {
+    pageview(location.pathname + location.search);
+  }, [location]);
+
   return (
-    <Router basename="/portfolio">
+    <>
       <Navbar />
       <div className="App">
-        <header>
-
-        </header>
-       
+        <header></header>
         <Routes>  
           <Route path="/" element={<Home />} />
           <Route path="/projects" element={<Projects />} />
@@ -26,6 +31,15 @@ function App() {
         </Routes>
       </div>
       <Footer />
+    </>
+  );
+}
+
+function App() {
+  return (
+    <Router basename="/portfolio">
+      <GoogleAnalytics />
+      <AppRoutes />
     </Router>
   );
 }
