@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { projects } from "../projects";
 
 export default function ProjectDetail() {
   const { projectId } = useParams();
   const project = projects.find(p => p.id === projectId);
+
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [projectId]);
 
   if (!project) {
     return (
@@ -63,6 +68,33 @@ export default function ProjectDetail() {
           alt={project.name}
           className="w-full rounded-md shadow-sm mb-6"
         />
+      )}
+      {project.image3 && (
+        <img
+          src={project.image3}
+          alt={project.name}
+          className="w-full rounded-md shadow-sm mb-6"
+        />
+      )}
+      {project.image4 && (
+        <img
+          src={project.image4}
+          alt={project.name}
+          className="w-full rounded-md shadow-sm mb-6"
+        />
+      )}
+
+      {project.video && (
+        <div className="mb-6">
+          <video
+            src={project.video}
+            controls
+            className="w-full rounded-md shadow-sm"
+            preload="metadata"
+          >
+            Your browser does not support the video tag.
+          </video>
+        </div>
       )}
 
       {project.pdf && (

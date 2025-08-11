@@ -1,5 +1,5 @@
 // src/components/GoogleAnalytics.js
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 
 const GA_MEASUREMENT_ID = "G-516R67VRT6";
 

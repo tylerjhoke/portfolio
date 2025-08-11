@@ -18,6 +18,8 @@ const mechanicalSkills = [
   "Mechanical Analysis",
   "Simulation",
   "Fluid/Thermal Analysis",
+  "Creo",
+  "SolidWorks",
 
 ];
 
