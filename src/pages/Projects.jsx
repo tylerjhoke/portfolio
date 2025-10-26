@@ -11,6 +11,8 @@ const getUniqueTags = (projects) =>
 // Define the categories for the skills
 const mechanicalSkills = [
   "SolidWorks",
+  "nTop",
+  "ANSYS Fluent",
   "3D Printing",
   "FEA",
   "MATLAB",
@@ -31,11 +33,11 @@ export default function Projects() {
   const mechanicalTags = allTags.filter(tag => mechanicalSkills.includes(tag)).sort();
   const interdisciplinaryTags = allTags.filter(tag => !mechanicalSkills.includes(tag)).sort();
 
-  // Filter projects based on selected tags
+  // Filter projects based on selected tags (OR logic)
   const filteredProjects = selectedTags.length === 0
     ? projects
     : projects.filter(project =>
-        selectedTags.every(tag => project.tags.includes(tag))
+        selectedTags.some(tag => project.tags.includes(tag))
       );
 
   const handleTagClick = (tag) => {
@@ -70,17 +72,17 @@ export default function Projects() {
       />
 
       {/* Projects Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {filteredProjects.length > 0 ? (
-          filteredProjects.map(project => (
+      {filteredProjects.length > 0 ? (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {filteredProjects.map(project => (
             <ProjectCard key={project.name} project={project} />
-          ))
-        ) : (
-          <p className="text-gray-600 col-span-full text-center">
-            No projects match the selected skills.
-          </p>
-        )}
-      </div>
+          ))}
+        </div>
+      ) : (
+        <p className="text-gray-600 text-center">
+          No projects match the selected skills.
+        </p>
+      )}
 
       {/* Back Button */}
       <div className="mt-12 text-center">

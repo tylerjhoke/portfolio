@@ -1,13 +1,15 @@
 export const projects = [
-    {
-    id: "wip",
-    name: "Projects Completed, but not yet added to the portfolio",
-    description: "Involving... Ansys Mechanical, Fluid, and Thermal. Creo Flow. Table Tennis Ball Launcher.",
-    image: `${process.env.PUBLIC_URL}/assets/images/projects/wip.png`,
-    image1: ``,
-    image2: ``,
+  {
+    id: "3d-printed-hx",
+    name: "3D-Printed Cold Plate Heat Exchanger (Senior Design Project)",
+    description: "Led the design and development of a 3D-printed stainless-steel cold plate heat exchanger for high-performance cooling applications, focusing on utilizing additive manufacturing for thermal optimization.",
+    body: "As part of my senior design project, I designed a 3D-printed cold plate heat exchanger using 17-4 PH stainless steel filament to evaluate the use of additive manufacturing for advanced liquid cooling systems. The design was created in SolidWorks with internal flow channels optimized for efficient heat transfer and low pressure drop. I conducted thermal-fluid simulations to validate performance and iterated geometry for manufacturability and flow uniformity. This project strengthened my skills in CAD modeling, simulation-driven design, and metal additive manufacturing processes.",
+    image: `${process.env.PUBLIC_URL}/assets/images/projects/amhx.png`, // Replace with the actual image path
+    image1: `${process.env.PUBLIC_URL}/assets/images/projects/amhx1.png`, // Replace with the actual image path
+    image2: `${process.env.PUBLIC_URL}/assets/images/projects/amhx2.png`, // Replace with the actual image path
     link: "",
-    tags: ["Fluid/Thermal Analysis", "Mechanical Analysis", "Simulation", "Product Design"]
+    tags: ["ANSYS Fluent", "SolidWorks", "nTop", "Fluid/Thermal Analysis", "Simulation", "Product Design"],
+    featured: true
   },
   {
     id: "website-portfolio",
@@ -17,8 +19,21 @@ export const projects = [
     image1: ``,
     image2: ``,
     link: "",
-    tags: ["React", "Web Development", "JavaScript"]
+    tags: ["React", "Web Development", "JavaScript"],
+    featured: false
   },
+  {
+  id: "table-tennis-launcher",
+  name: "Automated Table Tennis Ball Launcher",
+  description: "Developed an automated table tennis ball launcher integrating mechanical, electrical, and software systems to provide adjustable, jam-free ball delivery for solo player training.",
+  body: "As part of my ME 322 Engineering Design VI course, I led the electrical design and programming for a fully functional alpha prototype of a table tennis ball launcher. The system featured a dual flywheel mechanism for variable launch velocity, a spiral ball queue with a servo gate to prevent jamming, and a touchless ultrasonic activation sensor for safety. User control was achieved through potentiometers for frequency and speed adjustment, with a piezo buzzer providing auditory feedback. I developed the Arduino-based interface logic and wiring architecture, ensuring smooth synchronization between components. The design met all key requirements, including adjustable launch angle, repeatable ball delivery, and cost-effectiveness under a $250 production goal. This project strengthened my skills in mechatronic system integration, hardware troubleshooting, and prototype development.",
+  image: `${process.env.PUBLIC_URL}/assets/images/projects/ttbl.png`, // Replace with actual image path if different
+  image1: `${process.env.PUBLIC_URL}/assets/images/projects/ttbl1.png`, // Replace with actual image path if different
+  link: "",
+  tags: ["Arduino", "Mechatronics", "Product Design"],
+  featured: false
+},
+
   {
   id: "cold-plate-design",
   name: "Cold Plate Design for a Thermal Conduction Module (TCM)",
@@ -28,7 +43,8 @@ export const projects = [
   image1: `${process.env.PUBLIC_URL}/assets/images/projects/tcm1.png`, // Replace with the actual image path
   image2: `${process.env.PUBLIC_URL}/assets/images/projects/tcm3.png`, // Replace with the actual image path
   link: "",
-  tags: ["SolidWorks", "Product Design", "Fluid/Thermal Analysis", "Simulation"]
+  tags: ["SolidWorks", "Product Design", "Fluid/Thermal Analysis", "Simulation"],
+  featured: false
   },
   {
   id: "fea-solidworks-vs-matlab",
@@ -40,7 +56,8 @@ export const projects = [
   image1: ``,
   image2: ``,
   pdf:    `${process.env.PUBLIC_URL}/assets/docs/cs2report.pdf`,   // <‑‑ PDF here
-  tags: ["Mechanical Analysis", "SolidWorks", "MATLAB", "Simulation"]
+  tags: ["Mechanical Analysis", "SolidWorks", "MATLAB", "Simulation"],
+  featured: false
   },
   {
     id: "caliper-model",
@@ -52,7 +69,8 @@ export const projects = [
     image2: ``,
     image3: ``,
     link: "",
-    tags: ["Creo"]
+    tags: ["Creo"],
+    featured: false
   },
   {
     id: "creo-modeling-projects",
@@ -64,7 +82,8 @@ export const projects = [
     image2: `${process.env.PUBLIC_URL}/assets/images/projects/creo2.png`,
     image3: `${process.env.PUBLIC_URL}/assets/images/projects/creo3.png`,
     link: "",
-    tags: ["Creo"]
+    tags: ["Creo"],
+    featured: false
   },
   {
   id: "rocket-launch-dynamics",
@@ -75,7 +94,8 @@ export const projects = [
   image1: ``,
   image2: ``,
   link: "",
-  tags: ["MATLAB", "Simulink", "Simulation"]
+  tags: ["MATLAB", "Simulink", "Simulation"],
+  featured: true
   },
   {
   id: "hydroponic-tower",
@@ -87,7 +107,8 @@ export const projects = [
   image2: `${process.env.PUBLIC_URL}/assets/images/projects/hpn2.png`,
   image3: `${process.env.PUBLIC_URL}/assets/images/projects/hpn3.png`,
   link: "",
-  tags: ["3D Printing", "Product Design", "SolidWorks", "Electronics"]
+  tags: ["3D Printing", "Product Design", "SolidWorks", "Electronics"],
+  featured: true
   },
   {
   id: "c-clamp-fea",
@@ -99,7 +120,8 @@ export const projects = [
   image2: `${process.env.PUBLIC_URL}/assets/images/projects/cclamp2.png`,
   image3: `${process.env.PUBLIC_URL}/assets/images/projects/cclamp4.png`,
   link: "",
-  tags: ["SolidWorks", "Simulation", "Mechanical Analysis"]
+  tags: ["SolidWorks", "Simulation", "Mechanical Analysis"],
+  featured: false
   },
   {
   id: "amplifier-crossover-network",
@@ -110,7 +132,8 @@ export const projects = [
   image1: ``,
   image2: ``,
   link: "",
-  tags: ["MATLAB", "Simulink", "Simscape", "Circuit Design", "Signal Processing", "Electronics"]
+  tags: ["MATLAB", "Simulink", "Simscape", "Circuit Design", "Signal Processing", "Electronics"],
+  featured: false
   },
   {
   id: "autonomous-vehicle-challenge",
@@ -124,7 +147,8 @@ export const projects = [
   image4: `${process.env.PUBLIC_URL}/assets/images/projects/robot4.png`,
   video: `${process.env.PUBLIC_URL}/assets/images/projects/robot5.mp4`,
   link: "",
-  tags: ["Arduino", "C++", "SolidWorks", "Robotics", "Electronics", "Circuit Design", "Product Design"]
+  tags: ["Arduino", "C++", "SolidWorks", "Robotics", "Electronics", "Circuit Design", "Product Design"],
+  featured: true
   },
   {
     id: "environmental-monitor",
@@ -137,7 +161,8 @@ export const projects = [
     image3: `${process.env.PUBLIC_URL}/assets/images/projects/ims3.png`,
     image4: `${process.env.PUBLIC_URL}/assets/images/projects/ims4.png`,
     link: "",
-    tags: ["Arduino","SolidWorks", "C++", "3D Printing", "Data Analysis", "Circuit Design", "Electronics", "Product Design"]
+    tags: ["Arduino","SolidWorks", "C++", "3D Printing", "Data Analysis", "Circuit Design", "Electronics", "Product Design"],
+    featured: false
   },
   
   

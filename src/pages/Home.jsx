@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import { projects } from "../projects";
 
 export default function Home() {
   const aboutRef = useRef(null);
@@ -42,6 +43,9 @@ export default function Home() {
     setCurrentVideoUrl('');
   };
 
+  // Get featured projects
+  const featuredProjects = projects.filter(project => project.featured === true);
+
   return (
     <div className="animate-fade">
       {/* Banner Section */}
@@ -80,22 +84,98 @@ export default function Home() {
         <div className="bg-white rounded-xl shadow-xl p-2 text-gray-800">
           <h2 className="text-3xl font-semibold mb-5">About Me</h2>
           <p className="text-lg leading-relaxed mb-4">
-            Hi! I’m Tyler Hoke, a passionate mechanical engineering student seeking full-time roles beginning Spring '26.
-            I enjoy building solutions to real-world problems and thrive in fast-paced, high-pressure environments where critical thinking and adaptability are key.
-            This portfolio highlights some of my favorite projects, showcasing my education and technical background.
+            Hi! I’m Tyler Hoke, a mechanical engineering student passionate about solving real-world problems through hands-on design and analysis.
+            I’m currently seeking full-time opportunities starting in Spring 2026.
+            I thrive in fast-paced environments where adaptability, critical thinking, and creativity come together to make an impact.
+            This portfolio highlights some of my favorite projects that reflect my technical background and engineering mindset.
           </p>
           <p className="text-lg leading-relaxed mb-4">
-            Outside of engineering, I’m an avid athlete—especially passionate about volleyball.
-            Competing at a high level has strengthened my discipline, teamwork, and leadership skills, all of which shape my engineering mindset.
-            I also enjoy cooking and spending time with friends—it’s how I relax, refocus, and stay sharp. These moments help me return to technical challenges with a fresh perspective.
+            Outside the classroom, I am a varsity athlete on the Stevens Men’s Volleyball Team.
+            Competing at a national level has taught me the value of discipline, teamwork, and perseverance.
+            Volleyball has also helped me develop strong leadership and communication skills, as well as the ability to stay composed and think strategically under pressure.
+            These experiences have shaped how I approach engineering challenges, emphasizing preparation, collaboration, and a drive to improve every day.
           </p>
           <p className="text-lg leading-relaxed mb-4">
-            As a dedicated and multidisciplinary individual, I’m confident in my ability to contribute meaningfully to your organization.
-            I bring a unique mix of technical expertise, a drive for continuous learning, and a strong commitment to excellence.
-            I’m excited to apply my skills and passion to make a lasting impact.
+            I am always eager to learn, grow, and contribute meaningfully to the teams I am part of.
+            With a strong foundation in engineering and a commitment to continuous improvement, I am excited to apply my skills to make a lasting impact.
           </p>
         </div>
+
       </div>
+
+      {/* Featured Projects Section */}
+      {featuredProjects.length > 0 && (
+        <section className="bg-gray-50">
+          <div
+            className="relative py-20 mb-10 bg-gradient-to-r from-zinc-600 to-zinc-900 overflow-hidden"
+          >
+            {/* Decorative elements */}
+            <div className="absolute top-0 left-0 w-full h-full opacity-10">
+              {/* Top row */}
+              <div className="absolute top-10 left-10 w-20 h-20 border-2 border-white rounded-full"></div>
+              <div className="absolute top-12 left-32 w-8 h-8 border-2 border-white rounded-full"></div>
+              <div className="absolute top-24 left-52 w-16 h-16 border-2 border-white rotate-45"></div>
+              <div className="absolute top-8 left-80 w-12 h-12 border-2 border-white rounded-full"></div>
+              
+              {/* Middle left */}
+              <div className="absolute top-1/2 -translate-y-1/2 left-16 w-14 h-14 border-2 border-white rotate-12"></div>
+              <div className="absolute top-1/2 -translate-y-1/2 left-32 w-6 h-6 border-2 border-white rounded-full"></div>
+              
+              {/* Middle right */}
+              <div className="absolute top-1/2 -translate-y-1/2 right-20 w-16 h-16 border-2 border-white rotate-45"></div>
+              <div className="absolute top-1/2 -translate-y-1/2 right-40 w-10 h-10 border-2 border-white rounded-full"></div>
+              
+              {/* Right side */}
+              <div className="absolute top-20 right-20 w-16 h-16 border-2 border-white rotate-45"></div>
+              <div className="absolute top-32 right-36 w-10 h-10 border-2 border-white rounded-full"></div>
+              <div className="absolute top-8 right-56 w-12 h-12 border-2 border-white rotate-12"></div>
+              
+              {/* Bottom row */}
+              <div className="absolute bottom-10 left-1/4 w-12 h-12 border-2 border-white rounded-full"></div>
+              <div className="absolute bottom-16 left-1/3 w-8 h-8 border-2 border-white rounded-full"></div>
+              <div className="absolute bottom-20 right-1/3 w-24 h-24 border-2 border-white rotate-12"></div>
+              <div className="absolute bottom-12 right-1/2 w-10 h-10 border-2 border-white rotate-45"></div>
+              <div className="absolute bottom-24 left-1/2 w-14 h-14 border-2 border-white rounded-full"></div>
+            </div>
+            
+            {/* Gradient overlay for depth */}
+            <div className="absolute inset-0 bg-gradient-to-br from-zinc-700/50 to-transparent"></div>
+            
+            <h2 className="relative z-10 text-3xl sm:text-4xl font-semibold text-white text-center">
+              Featured Projects
+            </h2>
+          </div>
+          <div className="max-w-6xl mx-auto px-5 pb-16">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+              {featuredProjects.map((project) => (
+                <Link
+                  key={project.id}
+                  to={`/projects/${project.id}`}
+                  className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+                >
+                  <img
+                    src={project.image}
+                    alt={project.name}
+                    className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute bottom-0 left-0 right-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <h3 className="text-white font-bold text-base mb-2">{project.name}</h3>
+                    <p className="text-white/90 text-xs line-clamp-3">{project.description}</p>
+                  </div>
+                </Link>
+              ))}
+            </div>
+            <div className="text-center">
+              <Link to="/projects">
+                <button className="px-6 py-3 text-lg font-semibold bg-gradient-to-r from-zinc-600 to-zinc-900 text-white rounded-lg hover:opacity-90 transition-all duration-300 shadow-md hover:shadow-lg">
+                  View All Projects
+                </button>
+              </Link>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Volleyball Highlights Section (unchanged) */}
       <section className="bg-gray-50">
