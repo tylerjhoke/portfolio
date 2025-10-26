@@ -11,22 +11,24 @@ export default function ProjectCard({ project }) {
   return (
     <div
       onClick={handleClick}
-      className="cursor-pointer bg-white rounded-xl shadow-sm hover:shadow-lg transform hover:scale-[1.02] transition-all duration-300 p-5 flex flex-col"
+      className="cursor-pointer group"
     >
-      <img
-        src={project.image}
-        alt={project.name}
-        className="rounded-md mb-4 h-48 w-full object-cover"
-      />
-      <h3 className="text-xl font-semibold text-gray-900 mb-2">
+      <div className="aspect-[4/3] overflow-hidden mb-4">
+        <img
+          src={project.image}
+          alt={project.name}
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+      </div>
+      <h3 className="text-xl font-light text-black mb-2 group-hover:underline">
         {project.name}
       </h3>
-      <p className="text-gray-600 text-sm flex-grow">{project.description}</p>
-      <div className="mt-4 flex flex-wrap gap-2">
+      <p className="text-gray-600 text-sm font-light leading-relaxed mb-3">{project.description}</p>
+      <div className="flex flex-wrap gap-2">
         {project.tags.map((tag) => (
           <span
             key={tag}
-            className="bg-indigo-100 text-indigo-700 px-2 py-1 rounded-full text-xs font-medium"
+            className="text-xs uppercase tracking-wider text-gray-500 font-light"
           >
             {tag}
           </span>

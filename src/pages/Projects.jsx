@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { projects } from "../projects";
 import ProjectCard from "../components/ProjectCard";
-import TagsFilter from "../components/TagsFilter";
 import { Link } from "react-router-dom";
 
 // Utility: get unique tags from all projects
@@ -22,7 +21,6 @@ const mechanicalSkills = [
   "Fluid/Thermal Analysis",
   "Creo",
   "SolidWorks",
-
 ];
 
 export default function Projects() {
@@ -47,53 +45,102 @@ export default function Projects() {
     );
   };
 
+  const clearFilters = () => {
+    setSelectedTags([]);
+  };
+
   return (
-    <section className="animate-fade max-w-7xl mx-auto px-6 py-16 bg-gray-50 rounded-md">
-      <h2 className="text-3xl font-semibold text-gray-900 mb-8 border-b border-gray-300 pb-2">
-        Projects
-      </h2>
-      
-      {/* Tags Filter for Mechanical Skills */}
-      <h3 className="text-xl font-semibold text-gray-800 mb-4">Mechanical Skills</h3>
-      <TagsFilter 
-        allTags={mechanicalTags} 
-        selectedTags={selectedTags} 
-        onTagClick={handleTagClick} 
-        className="mb-8"
-      />
-      
-      {/* Tags Filter for Interdisciplinary Skills */}
-      <h3 className="text-xl font-semibold text-gray-800 mb-4">Interdisciplinary Skills</h3>
-      <TagsFilter 
-        allTags={interdisciplinaryTags} 
-        selectedTags={selectedTags} 
-        onTagClick={handleTagClick} 
-        className="mb-8"
-      />
-
-      {/* Projects Grid */}
-      {filteredProjects.length > 0 ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map(project => (
-            <ProjectCard key={project.name} project={project} />
-          ))}
+    <div className="animate-fade bg-white min-h-screen">
+      {/* Hero Section */}
+      <div className="border-b border-gray-200 py-20 mb-16">
+        <div className="max-w-4xl mx-auto text-center px-6">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl font-light text-black mb-6 tracking-tight">
+            Projects
+          </h1>
+          <p className="text-lg font-light text-gray-600 max-w-2xl mx-auto">
+            A collection of my personal and educational engineering projects
+          </p>
         </div>
-      ) : (
-        <p className="text-gray-600 text-center">
-          No projects match the selected skills.
-        </p>
-      )}
-
-      {/* Back Button */}
-      <div className="mt-12 text-center">
-        <Link to="/">
-          <button
-            type="button"
-            className="px-6 py-2 border border-indigo-600 text-indigo-600 rounded-md hover:bg-indigo-600 hover:text-white transition">
-          Back to Home
-          </button>
-        </Link>
       </div>
-    </section>
+
+      <div className="max-w-7xl mx-auto px-6 py-6">
+        {/* Stats */}
+        <div className="mb-8 text-sm font-light text-gray-600 flex items-center justify-between">
+          <span>{filteredProjects.length} {filteredProjects.length === 1 ? 'project' : 'projects'}</span>
+          {selectedTags.length > 0 && (
+            <button
+              onClick={clearFilters}
+              className="uppercase tracking-wider text-xs hover:opacity-70 transition-opacity"
+            >
+              Clear filters
+            </button>
+          )}
+        </div>
+
+        {/* Filters */}
+        <div className="mb-12 pb-8 border-b border-gray-200">
+          <p className="text-xs uppercase tracking-wider text-gray-500 font-light mb-4">Filter</p>
+          
+          {/* Mechanical Skills */}
+          <div className="mb-6">
+            <p className="text-xs text-gray-500 font-light mb-3">Mechanical Skills</p>
+            <div className="flex flex-wrap gap-2">
+              {mechanicalTags.map(tag => (
+                <button
+                  key={tag}
+                  onClick={() => handleTagClick(tag)}
+                  className={`px-4 py-2 text-sm font-light transition-all uppercase tracking-wide ${
+                    selectedTags.includes(tag)
+                      ? 'bg-black text-white border border-black'
+                      : 'bg-white text-black border border-gray-300 hover:border-black'
+                  }`}
+                >
+                  {tag}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Interdisciplinary Skills */}
+          <div>
+            <p className="text-xs text-gray-500 font-light mb-3">Interdisciplinary Skills</p>
+            <div className="flex flex-wrap gap-2">
+              {interdisciplinaryTags.map(tag => (
+                <button
+                  key={tag}
+                  onClick={() => handleTagClick(tag)}
+                  className={`px-4 py-2 text-sm font-light transition-all uppercase tracking-wide ${
+                    selectedTags.includes(tag)
+                      ? 'bg-black text-white border border-black'
+                      : 'bg-white text-black border border-gray-300 hover:border-black'
+                  }`}
+                >
+                  {tag}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Projects Grid */}
+        {filteredProjects.length > 0 ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-12">
+            {filteredProjects.map(project => (
+              <ProjectCard key={project.name} project={project} />
+            ))}
+          </div>
+        ) : (
+          <div className="text-center py-32">
+            <p className="text-lg font-light text-gray-600 mb-4">No projects found</p>
+            <button
+              onClick={clearFilters}
+              className="text-sm uppercase tracking-wider border-b border-black pb-1 hover:pb-2 transition-all duration-300 font-light"
+            >
+              Clear Filters
+            </button>
+          </div>
+        )}
+      </div>
+    </div>
   );
 }

@@ -4,36 +4,42 @@ import { workExperiences } from '../work.js'; // Import the data from the new fi
 
 export default function WorkExperience() {
   return (
-    <section className="animate-fade max-w-7xl mx-auto px-6 py-16 bg-gray-50 rounded-md">
-      <h2 className="text-3xl font-semibold text-gray-900 mb-8 border-b border-gray-300 pb-2">
-        Past Work Experience
-      </h2>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {workExperiences.map((experience) => (
-          <div key={experience.id} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-            <h3 className="text-xl font-bold text-gray-900 mb-1">{experience.company}</h3>
-            <p className="text-lg text-indigo-700 font-medium mb-1">{experience.title}</p>
-            <p className="text-sm text-gray-600 mb-4">{experience.duration} - {experience.location}</p>
-            <ul className="list-disc pl-5 text-gray-700 space-y-2">
-              {experience.responsibilities.map((responsibility, index) => (
-                <li key={index} className="text-base">{responsibility}</li>
-              ))}
-            </ul>
-          </div>
-        ))}
+    <div className="animate-fade bg-white min-h-screen">
+      {/* Hero Section */}
+      <div className="border-b border-gray-200 py-20 mb-16">
+        <div className="max-w-4xl mx-auto text-center px-6">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl font-light text-black mb-6 tracking-tight">
+            Experience
+          </h1>
+          <p className="text-lg font-light text-gray-600 max-w-2xl mx-auto">
+            Professional work experience and internships
+          </p>
+        </div>
       </div>
 
-      {/* Back Button */}
-      <div className="mt-12 text-center">
-        <Link to="/">
-          <button
-            type="button"
-            className="px-6 py-2 border border-indigo-600 text-indigo-600 rounded-md hover:bg-indigo-600 hover:text-white transition">
-            Back to Home
-          </button>
-        </Link>
+      <div className="max-w-7xl mx-auto px-6 py-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mb-20">
+          {workExperiences.map((experience) => (
+            <div key={experience.id} className="border-b border-gray-200 pb-12 last:border-0">
+              <div className="mb-6">
+                <h3 className="text-2xl font-light text-black mb-2">{experience.company}</h3>
+                <p className="text-lg font-light text-gray-700 mb-2">{experience.title}</p>
+                <p className="text-sm uppercase tracking-wider text-gray-500 font-light">
+                  {experience.duration} • {experience.location}
+                </p>
+              </div>
+              <ul className="space-y-3 text-gray-700 font-light leading-relaxed">
+                {experience.responsibilities.map((responsibility, index) => (
+                  <li key={index} className="flex items-start">
+                    <span className="mr-3 text-black">—</span>
+                    <span>{responsibility}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
       </div>
-    </section>
+    </div>
   );
 }

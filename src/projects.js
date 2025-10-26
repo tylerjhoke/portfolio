@@ -8,7 +8,7 @@ export const projects = [
     image1: `${process.env.PUBLIC_URL}/assets/images/projects/amhx1.png`, // Replace with the actual image path
     image2: `${process.env.PUBLIC_URL}/assets/images/projects/amhx2.png`, // Replace with the actual image path
     link: "",
-    tags: ["ANSYS Fluent", "SolidWorks", "nTop", "Fluid/Thermal Analysis", "Simulation", "Product Design"],
+    tags: ["ANSYS Fluent", "SolidWorks", "nTop", "Fluid/Thermal Analysis", "Simulation", "Product Design", "3D Printing"],
     featured: true
   },
   {
@@ -30,7 +30,7 @@ export const projects = [
   image: `${process.env.PUBLIC_URL}/assets/images/projects/ttbl.png`, // Replace with actual image path if different
   image1: `${process.env.PUBLIC_URL}/assets/images/projects/ttbl1.png`, // Replace with actual image path if different
   link: "",
-  tags: ["Arduino", "Mechatronics", "Product Design"],
+  tags: ["Arduino", "Mechatronics", "3D Printing", "Product Design"],
   featured: false
 },
 
